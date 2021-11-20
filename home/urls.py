@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from home_page.views import index_home
 from dashboard.views import index_dashboard
+from django.conf import settings  
+from django.conf.urls.static import static  
 
 urlpatterns = [
 
@@ -25,7 +27,12 @@ urlpatterns = [
 
     # Rotas para a página Home - Inicial
     path('index/', index_home.index),
+    path('resumo/', index_home.resumo),
+    path('formacao_cursos_complementares_home/', index_home.formacao_cursos_complementares_home),
+    path('formacao_academica_home/', index_home.formacao_academica_home),
+    path('contatos/', index_home.contatos_home),
+
 
     # Rotas para a Dashboard
     path('dashboard/index/', index_dashboard.index)
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

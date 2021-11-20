@@ -1,0 +1,26 @@
+.navbar{
+    background-color: rgb(101, 27, 170);
+}
+
+.navbar-toggler-icon{
+    font-size: x-large;
+}
+
+.navbar-brand{
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-left: 1rem;
+}
+
+.email{
+    text-decoration: none;
+    color: white;
+}
+
+.input-group-addon{
+    margin-right: 10px;
+}
+
+.content{
+    margin-top: 3.5rem;
+}

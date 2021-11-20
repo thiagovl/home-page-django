@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY', default='', cast=str)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = [config('ALLOWED_HOSTS', default=[], cast=str)]
+ALLOWED_HOSTS = ['*', config('ALLOWED_HOSTS', default=[], cast=str)]
 
 
 # Application definition
@@ -59,7 +59,7 @@ ROOT_URLCONF = 'home.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'templates/home_pages'), os.path.join(BASE_DIR, 'templates/dashboard_pages')],
+        'DIRS': [ os.path.join(BASE_DIR, 'templates/components'), os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'templates/home_pages'), os.path.join(BASE_DIR, 'templates/home_pages/models_templates'), os.path.join(BASE_DIR, 'templates/dashboard_pages')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -112,10 +112,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = '/media/'
+
+STATICFILES_DIRS = ( 
+    os.path.join(BASE_DIR, 'static'),        
+    os.path.join(BASE_DIR, 'media'),   
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -137,13 +142,22 @@ FIREBASE_ADMIN_CERT = {
 }
 
 # Database Postgres Heroku
+# DATABASES = {
+#     'default': {
+#         'ENGINE': config('ENGINE'),
+#         'NAME': config('NAME'),
+#         'USER': config('USER_NAME'),
+#         'PASSWORD': config('PASSWORD'),
+#         'HOST': config('HOST'),
+#         'PORT': config('PORT'),
+#     }
+# }
+
+# Database SQLite3
+# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': config('ENGINE'),
-        'NAME': config('NAME'),
-        'USER': config('USER_NAME'),
-        'PASSWORD': config('PASSWORD'),
-        'HOST': config('HOST'),
-        'PORT': config('PORT'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }

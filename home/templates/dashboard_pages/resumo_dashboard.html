@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Resumo</title>
+</head>
+<body>
+    <form action="/dashboard/resumo/add" method="POST">{% csrf_token %}
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nome da Empresa</span>
+            <input type="text" class="form-control" placeholder="Digite nome da Empresa" aria-label="Username"
+                aria-describedby="basic-addon1" name="company">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Função</span>
+            <input type="text" class="form-control" placeholder="Digite o Título" aria-label="Username"
+                aria-describedby="basic-addon1" name="occupation" >
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Título</span>
+            <input type="text" class="form-control" placeholder="Digite o Título" aria-label="Username"
+                aria-describedby="basic-addon1" name="titulo" value="{{ evento.titulo }}">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Atividades</span>
+            <input type="text" class="form-control" placeholder="Digite as atividades realizadas" aria-label="Username"
+                aria-describedby="basic-addon1" name="activities">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Tags</span>
+            <input type="text" class="form-control" placeholder="Digite as atividades realizadas" aria-label="Username"
+                aria-describedby="basic-addon1" name="tags">
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-text">Data Entrada</span>
+            <input type="date" class="form-control" name="start_date">
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-text">Data Saída</span>
+            <input type="date" class="form-control" name="departure_date">
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-primary" style="width: 100px;">Salvar</button>
+            <a href="/home/">
+                <button type="button" class="btn btn-secondary" style="width: 100px;">Cancelar</button>
+            </a>
+        </div>
+
+    </form>
+</body>
+</html>

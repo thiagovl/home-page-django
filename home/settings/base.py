@@ -161,3 +161,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+if config('DEBUG')  == True:
+    URL_API_ENV = 'https://api-home-page-django.herokuapp.com/resumo/' #config('URL_API_RESUMO_FALSE')
+else:
+    URL_API_ENV = 'https://api-home-page-django.herokuapp.com/resumo/' #config('URL_API_RESUMO_TRUE')

@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from home_page.views import index_home
-from dashboard.views import index_dashboard
+from dashboard.views import index_dashboard, resumo_dashboard
 from django.conf import settings  
 from django.conf.urls.static import static  
 
@@ -26,7 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Rotas para a página Home - Inicial
-    path('index/', index_home.index),
+    path('', index_home.index),
     path('resumo/', index_home.resumo),
     path('formacao_cursos_complementares_home/', index_home.formacao_cursos_complementares_home),
     path('formacao_academica_home/', index_home.formacao_academica_home),
@@ -34,5 +34,7 @@ urlpatterns = [
 
 
     # Rotas para a Dashboard
-    path('dashboard/index/', index_dashboard.index)
+    path('dashboard/index/', index_dashboard.index),
+    path('dashboard/resumo/', resumo_dashboard.insert_resumo_view),
+    path('dashboard/resumo/add', resumo_dashboard.insert_resumo)
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -4,12 +4,10 @@ from home.settings import base
 
 # Create your views here.
 
-
-
 def index(request):
     return render(request, 'index_home.html')
 
-def resumo(request):
+def professional_experience(request):
     db = requests.get(base.URL_API_ENV)
     aux = db.json()
     i = 0
@@ -24,14 +22,13 @@ def resumo(request):
     context = {
         'dts': aux,
     }
-    print(type(db))
-    return render(request,'resumo_home.html', context)
+    return render(request,'professional_experience_home.html', context)
 
 def formacao_cursos_complementares_home(request):
-    return render(request,'formacao_cursos_complementares_home.html')
+    return render(request,'complementary_courses_home.html')
 
 def formacao_academica_home(request):
-    return render(request,'formacao_academica_home.html')
+    return render(request,'academic_education_home.html')
 
 def contatos_home(request):
-    return render(request,'contatos_home.html')
+    return render(request,'contacts_home.html')

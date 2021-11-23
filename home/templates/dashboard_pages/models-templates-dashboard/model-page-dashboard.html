@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+<head>
+
+    
+    <!-- Include Header -->
+    {% include "models-templates-dashboard/model-header-dashboard.html" %}
+    
+</head>
+
+<body>
+    
+    {% include "components/navbar/navbar-dashboard.html" %}
+
+    <!-- Include Body -->
+    {% block content %}{% endblock %}
+
+    <!-- Include Footer -->
+    {% include "models-templates-dashboard/model-footer-dashboard.html" %}
+    
+</body>
+
+<!-- JS -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</html>

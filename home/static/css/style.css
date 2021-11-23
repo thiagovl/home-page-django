@@ -1,5 +1,9 @@
+body{
+    background-color: #d5e0e7;
+}
+
 .navbar{
-    background-color: rgb(101, 27, 170);
+    background-color: rgb(23, 118, 243);
 }
 
 .navbar-toggler-icon{
@@ -23,4 +27,10 @@
 
 .content{
     margin-top: 3.5rem;
+}
+
+.h2-timeline{
+    margin-top: 5rem;
+    margin-left: 5rem;
+    font-weight: 600;
 }

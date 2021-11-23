@@ -59,7 +59,14 @@ ROOT_URLCONF = 'home.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ os.path.join(BASE_DIR, 'templates/components'), os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'templates/home_pages'), os.path.join(BASE_DIR, 'templates/home_pages/models_templates'), os.path.join(BASE_DIR, 'templates/dashboard_pages')],
+        'DIRS': [ 
+            os.path.join(BASE_DIR, 'templates/components'), 
+            os.path.join(BASE_DIR, 'templates/components/forms'), 
+            os.path.join(BASE_DIR, 'templates'), 
+            os.path.join(BASE_DIR, 'templates/home_pages'), 
+            os.path.join(BASE_DIR, 'templates/home_pages/models_templates'), 
+            os.path.join(BASE_DIR, 'templates/dashboard_pages'), 
+            os.path.join(BASE_DIR, 'templates/dashboard_pages/models-templates-dashboard')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -163,6 +170,6 @@ DATABASES = {
 }
 
 if config('DEBUG')  == True:
-    URL_API_ENV = 'https://api-home-page-django.herokuapp.com/resumo/' #config('URL_API_RESUMO_FALSE')
+    URL_API_ENV = 'http://127.0.0.1:8080/professional_experience/' #config('URL_API_RESUMO_FALSE')
 else:
-    URL_API_ENV = 'https://api-home-page-django.herokuapp.com/resumo/' #config('URL_API_RESUMO_TRUE')
+    URL_API_ENV = 'http://127.0.0.1:8080/professional_experience/' #config('URL_API_RESUMO_TRUE')

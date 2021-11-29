@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load avatar_tags %}
 <!DOCTYPE html>
 <html lang="pt-br">
     
@@ -13,9 +13,10 @@
 <body>
 
     {% include "components/navbar/navbar-home.html" %}
-
     <!-- Include Body -->
-    {% block content %}{% endblock %}
+    {% block content %}
+        <a href="{% url 'avatar_change' %}">Change your avatar</a>
+    {% endblock %}
 
     <!-- Include Footer -->
     {% include "models-templates-home/model-footer.html" %}

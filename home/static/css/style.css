@@ -1,36 +1,63 @@
-body{
-    background-color: #d5e0e7;
+body,
+html {
+    background: #e6e6e6;
 }
 
-.navbar{
+.navbar {
     background-color: rgb(23, 118, 243);
 }
 
-.navbar-toggler-icon{
+.navbar-toggler-icon {
     font-size: x-large;
 }
 
-.navbar-brand{
-    font-size: 1.7rem;
+.navbar-brand {
+    font-size: 1.8rem;
     font-weight: 500;
     margin-left: 1rem;
 }
 
-.email{
+.email {
     text-decoration: none;
     color: white;
 }
 
-.input-group-addon{
+.input-group-addon {
     margin-right: 10px;
 }
 
-.content{
+.content {
     margin-top: 3.5rem;
 }
 
-.h2-timeline{
-    margin-top: 5rem;
+.h2-timeline {
+    padding-top: 5rem;
     margin-left: 5rem;
     font-weight: 600;
+}
+
+.img-circle {
+    width: 3.5rem;
+    border-radius: 50%;
+}
+
+@media (max-width: 589px) {
+    .navbar-brand {
+        font-size: 1.0em;
+        margin-left: 0.1rem;
+    }
+    .img-circle {
+        width: 2em;
+    }
+    .navbar-toggler {
+        width: 3rem;
+        height: 3rem;
+    }
+    .navbar-toggler-icon {
+        width: 1.5rem;
+        height: 2rem;
+    }
+    .email-end {
+        font-size: 0.7em;
+    }
 }

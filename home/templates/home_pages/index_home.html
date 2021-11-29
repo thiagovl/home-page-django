@@ -1,7 +1,8 @@
 {% extends "models-templates-home/model-page.html" %}
+{% load static %}
 
 {% block content %}
-    <div class="content" style="background-color: #d5e0e7; padding-top: 2rem;">
+    <div class="content" style="background:  url('{% static 'images/background.jpg' %}') no-repeat; background-size: cover; padding-top: 2rem;">
         {% include 'components/profile.html' %}
     </div>
 {% endblock %}

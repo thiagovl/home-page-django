@@ -1,5 +1,5 @@
 body{
-    background:#ddd;
+    background:#e6e6e6;
     }
     
     /*-------------------
@@ -7,7 +7,8 @@ body{
     ---------------------*/    
     .timeline{
         position:relative;
-        margin-bottom:100px;
+        background-color: #e6e6e6;
+        margin-bottom:110px;
         z-index:1;
     }
     
@@ -44,7 +45,7 @@ body{
         padding:15px 30px;
         font-size:21px;
         font-weight:400;
-        color:#fff;
+        color:#5CC9DF;
         background:#5CC9DF;
         border-radius:5px;
     }

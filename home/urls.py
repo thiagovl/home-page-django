@@ -15,15 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from home_page.views import index_home, views_home
-from dashboard.views import index_dashboard, resumo_dashboard
+from home_page.views import index_home, views_home, views_login
+from dashboard.views import index_dashboard, resumo_dashboard, url_links_dashboard
 from django.conf import settings  
 from django.conf.urls.static import static  
+from django.conf.urls import include, url
 
 urlpatterns = [
 
     # Rota para a página administrativa
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),    
 
     # Rotas para a página Home - Inicial
     path('', index_home.index),
@@ -34,9 +35,18 @@ urlpatterns = [
 
     # Rotas para as views
     path('view/experience/<id>/', views_home.view_professional_experience_home),
+    path('view/login/', views_login.views_singup),
 
     # Rotas para a Dashboard
     path('dashboard/', index_dashboard.index),
     path('dashboard/experience/', resumo_dashboard.insert_experience_view),
-    path('dashboard/experience/add', resumo_dashboard.insert_resumo)
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('dashboard/experience/add', resumo_dashboard.insert_resumo),
+    path('dashboard/register_url/', url_links_dashboard.register_url_links),
+    path('dashboard/register_url/add', url_links_dashboard.register_url_links_add),
+
+    # Rotas para funções diversas
+    path('view/login', views_login.singup),
+    path('logout/', views_login.logout_user),
+
+    url('avatars/', include('avatar.urls')),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

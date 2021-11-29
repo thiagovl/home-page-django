@@ -1,25 +1,24 @@
 {% load static %}
+{% load avatar_tags %}
 <nav class="navbar navbar-dark fixed-top" style="background-color: rgb(175, 54, 175);">
   <div class="container-fluid">
 
     <div>
-
       <!-- Icon menu -->
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar" title="Menu">
         <span class="navbar-toggler-icon"></span>
       </button>
-
-
       <!-- Text navbar -->
       <a class="navbar-brand" href="/dashboard/" style="color: white;">Dashboard</a>
-
     </div>
+
+    <!-- Avatar -->
+    {% include 'components/avatar/avatar.html' %}
 
 
     <!-- Menu -->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-
       <!-- Title menu -->
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="font-weight: 700; color: black;">Menu</h5>
@@ -29,13 +28,11 @@
       <li>
         <hr class="dropdown-divider">
       </li>
-
       <!-- Itens menu -->
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           {% include 'components/navbar/items-dashboard.html' %}
         </ul>
-
       </div>
     </div>
   </div>
